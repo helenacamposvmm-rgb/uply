@@ -44,11 +44,6 @@ export function About() {
             <p>
               Meu objetivo é transformar suas ideias em uma realidade digital sólida — unindo criatividade, estética e as melhores práticas de usabilidade e tecnologia.
             </p>
-            <div className="mt-6">
-              <Link href="#contato">
-                <ShimmerButton>Vamos conversar</ShimmerButton>
-              </Link>
-            </div>
           </div>
         </div>
       </div>
