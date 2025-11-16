@@ -36,13 +36,13 @@ export function About() {
           </div>
           <div className="text-lg text-muted-foreground space-y-4">
             <p>
-              Olá! Eu sou Beatriz, uma web designer e desenvolvedora com foco em criar interfaces bonitas, funcionais e que geram resultados.
+              Olá! Eu sou a Uply, uma web designer e desenvolvedora focada em criar interfaces bonitas, funcionais e orientadas a resultados.
             </p>
             <p>
-              Com anos de experiência no campo do design digital, especializei-me na criação de websites personalizados, identidades visuais marcantes e estratégias de social media que conectam marcas aos seus públicos.
+              Com anos de experiência no design digital, especializei-me em desenvolver websites personalizados, identidades visuais marcantes e estratégias de social media que conectam marcas ao seu público de forma autêntica e eficiente.
             </p>
             <p>
-              Meu objetivo é transformar suas ideias em realidade digital, combinando criatividade com as melhores práticas de usabilidade e tecnologia.
+              Meu objetivo é transformar suas ideias em uma realidade digital sólida — unindo criatividade, estética e as melhores práticas de usabilidade e tecnologia.
             </p>
             <div className="mt-6">
               <Link href="#contato">
