@@ -33,7 +33,7 @@ export function Hero() {
       )}
       <div className="absolute inset-0 bg-black/60 -z-10"></div>
       
-      <div className={cn("container mx-auto px-4 opacity-0", isInView && "animate-fade-in-up")}>
+      <div className={cn("container mx-auto px-4 pt-20 sm:pt-0 opacity-0", isInView && "animate-fade-in-up")}>
         <h1 className="text-6xl sm:text-7xl md:text-8xl font-black tracking-tighter">
           <span className="block bg-clip-text text-transparent bg-gradient-to-r from-primary via-fuchsia-400 to-primary">Criação de Sites</span>
           <span className="block text-4xl sm:text-5xl md:text-6xl text-foreground">e Landing Pages</span>
