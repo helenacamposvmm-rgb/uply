@@ -32,7 +32,7 @@ export function Contact() {
             <div className="space-y-4 text-muted-foreground">
               <div className="flex items-center gap-4">
                 <Mail className="w-6 h-6 text-primary" />
-                <span>beatriz.designer@email.com</span>
+                <span>uplydesigner@email.com</span>
               </div>
               <div className="flex items-center gap-4">
                 <Phone className="w-6 h-6 text-primary" />
