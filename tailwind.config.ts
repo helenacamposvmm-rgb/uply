@@ -98,6 +98,10 @@ export default {
             transform: "translate(0, 0) rotate(360deg)",
           },
         },
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-100% - var(--gap)))' }
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -105,6 +109,7 @@ export default {
         'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
         "shimmer-slide": "shimmer-slide var(--speed) infinite",
         "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
+        marquee: 'marquee var(--duration) linear infinite',
       },
     },
   },
