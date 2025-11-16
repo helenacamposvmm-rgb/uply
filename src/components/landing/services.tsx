@@ -1,53 +1,60 @@
 "use client";
 
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Palette, MonitorSmartphone, Share2 } from 'lucide-react';
 import { SectionTitle } from './section-title';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
+import { Globe, ShoppingCart, ShieldCheck } from 'lucide-react';
+import DisplayCards from '../ui/display-cards';
 
-const services = [
+const benefits = [
   {
-    icon: <Palette className="w-10 h-10 text-primary" />,
-    title: 'Identidade Visual',
-    description: 'Criação de logotipos, paletas de cores e tipografia que representam a essência da sua marca.',
+    icon: <Globe className="size-4 text-purple-300" />,
+    title: "Seja encontrado",
+    description: "Mostre seus produtos e serviços para o mundo, 24/7.",
+    date: "",
+    iconClassName: "text-purple-500",
+    titleClassName: "text-purple-500",
+    className:
+      "[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
   },
   {
-    icon: <MonitorSmartphone className="w-10 h-10 text-primary" />,
-    title: 'Websites & Landing Pages',
-    description: 'Desenvolvimento de sites institucionais, blogs e landing pages responsivas e otimizadas para conversão.',
+    icon: <ShoppingCart className="size-4 text-green-300" />,
+    title: "Venda mais",
+    description: "Facilite a compra para seus clientes.",
+    date: "",
+    iconClassName: "text-green-500",
+    titleClassName: "text-green-500",
+    className:
+      "[grid-area:stack] translate-x-16 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
   },
   {
-    icon: <Share2 className="w-10 h-10 text-primary" />,
-    title: 'Social Media',
-    description: 'Design de templates e posts para redes sociais, criando uma presença online coesa e atraente.',
+    icon: <ShieldCheck className="size-4 text-sky-300" />,
+    title: "Credibilidade instantânea",
+    description: "Ganhe a confiança dos clientes com um site profissional.",
+    date: "",
+    iconClassName: "text-sky-500",
+    titleClassName: "text-sky-500",
+    className:
+      "[grid-area:stack] translate-x-32 translate-y-20 hover:translate-y-10",
   },
 ];
 
 export function Services() {
-  const { ref, isInView } = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+  const { ref, isInView } = useScrollAnimation({ threshold: 0.4, triggerOnce: true });
 
   return (
-    <section id="servicos" ref={ref} className="py-20 sm:py-32">
+    <section id="servicos" ref={ref} className="py-20 sm:py-32 overflow-hidden">
       <div className={cn("container mx-auto px-4 opacity-0", isInView && "animate-fade-in-up")}>
-        <SectionTitle
-          title="Meus Serviços"
-          subtitle="Soluções criativas e personalizadas para impulsionar a sua presença digital."
-        />
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="text-center bg-card/50 border-border/50 hover:border-primary transition-colors duration-300 transform hover:-translate-y-2">
-              <CardHeader>
-                <div className="mx-auto bg-primary/10 rounded-full w-20 h-20 flex items-center justify-center mb-4">
-                  {service.icon}
-                </div>
-                <CardTitle>{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>{service.description}</CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="md:order-2">
+                <SectionTitle
+                    title="COMO UM SITE PROFISSIONAL AJUDA SEU NEGÓCIO?"
+                    subtitle=""
+                />
+            </div>
+            <div className="flex items-center justify-center min-h-[300px] md:order-1">
+                <DisplayCards cards={benefits} />
+            </div>
         </div>
       </div>
     </section>
