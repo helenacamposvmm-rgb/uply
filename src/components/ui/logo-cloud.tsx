@@ -1,5 +1,6 @@
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { cn } from "@/lib/utils";
+import { Check } from "lucide-react";
 
 type LogoCloudProps = React.ComponentProps<"div"> & {
   logos: string[];
@@ -16,12 +17,14 @@ export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
     >
       <InfiniteSlider gap={42} speed={80} speedOnHover={25}>
         {logos.map((logoText) => (
-          <span
-            key={logoText}
-            className="text-lg font-medium text-muted-foreground whitespace-nowrap"
-          >
-            {logoText}
-          </span>
+          <div key={logoText} className="flex items-center gap-2">
+            <Check className="w-5 h-5 text-primary" />
+            <span
+              className="text-lg font-medium text-muted-foreground whitespace-nowrap"
+            >
+              {logoText}
+            </span>
+          </div>
         ))}
       </InfiniteSlider>
     </div>
