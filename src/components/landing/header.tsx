@@ -29,11 +29,22 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-40 transition-all duration-300 md:h-20',
+        'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
         scrolled ? 'md:bg-background/80 md:backdrop-blur-sm' : 'md:bg-transparent'
       )}
     >
       <NavBar items={navItems} />
+      <div className={cn("fixed top-0 left-0 right-0 z-50 p-4 flex justify-between items-center md:hidden", scrolled ? "bg-card/10 backdrop-blur-lg" : "bg-transparent")}>
+          <Link href="#inicio">
+              <Image 
+                src="https://i.postimg.cc/0yKCCpyx/Logo-com-formas-quadradas-sobre-fundo-roxo-(1).png"
+                alt="Uply Logo"
+                width={120}
+                height={28}
+                className='w-auto h-7'
+              />
+          </Link>
+      </div>
     </header>
   );
 }

@@ -5,9 +5,6 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
-import { Menu, X } from "lucide-react"
-import { Button } from "./button"
 import Image from "next/image"
 
 interface NavItem {
@@ -25,8 +22,6 @@ interface NavBarProps {
 export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,7 +36,7 @@ export function NavBar({ items, className }: NavBarProps) {
   useEffect(() => {
     const handleScroll = () => {
       const sections = items.map(item => document.querySelector(item.url.startsWith('#') ? item.url : ''));
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i] as HTMLElement;
@@ -56,74 +51,15 @@ export function NavBar({ items, className }: NavBarProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [items]);
 
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
-  };
-
-  if (isMobile) {
-    return (
-       <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-        <div className="fixed top-0 left-0 right-0 z-50 p-4 flex justify-between items-center md:hidden bg-card/10 backdrop-blur-lg">
-          <Link href="#inicio">
-              <Image 
-                src="https://i.postimg.cc/0yKCCpyx/Logo-com-formas-quadradas-sobre-fundo-roxo-(1).png"
-                alt="Uply Logo"
-                width={120}
-                height={28}
-                className='w-auto h-7'
-              />
-          </Link>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full">
-              <Menu />
-              <span className="sr-only">Abrir menu</span>
-            </Button>
-          </SheetTrigger>
-        </div>
-        <SheetContent side="right" className="w-[280px] bg-card/95 backdrop-blur-lg">
-          <nav className="flex flex-col gap-6 pt-16">
-            <Link href="#inicio" className="mb-4">
-              <Image 
-                src="https://i.postimg.cc/0yKCCpyx/Logo-com-formas-quadradas-sobre-fundo-roxo-(1).png"
-                alt="Uply Logo"
-                width={140}
-                height={32}
-                className='w-auto h-8'
-              />
-            </Link>
-            {items.map((item) => (
-               <SheetClose key={item.name} asChild>
-                <Link
-                  href={item.url}
-                  onClick={() => {
-                    setActiveTab(item.name)
-                    handleLinkClick()
-                  }}
-                  className={cn(
-                    "flex items-center gap-3 text-lg font-medium",
-                    activeTab === item.name ? "text-primary" : "text-foreground/80"
-                  )}
-                >
-                  <item.icon className="h-5 w-5" />
-                  {item.name}
-                </Link>
-               </SheetClose>
-            ))}
-          </nav>
-        </SheetContent>
-      </Sheet>
-    )
-  }
-
   return (
     <div
       className={cn(
-        "fixed top-0 left-1/2 -translate-x-1/2 z-50 mt-6 hidden md:block",
+        "fixed md:top-0 bottom-0 left-1/2 -translate-x-1/2 z-50 md:mt-6 mb-6",
         className,
       )}
     >
       <div className="flex items-center gap-3 bg-card/70 border border-border/50 backdrop-blur-lg py-1 px-2 rounded-full shadow-lg">
-        <Link href="#inicio" className="mr-2">
+        <Link href="#inicio" className="mr-2 hidden md:block">
             <Image 
               src="https://i.postimg.cc/0yKCCpyx/Logo-com-formas-quadradas-sobre-fundo-roxo-(1).png"
               alt="Uply Logo"
@@ -147,11 +83,12 @@ export function NavBar({ items, className }: NavBarProps) {
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-4 py-2 rounded-full transition-colors",
                 "text-foreground/80 hover:text-primary",
+                "md:px-4",
                 isActive && "text-primary",
               )}
             >
-              <span className="hidden lg:inline">{item.name}</span>
-              <span className="lg:hidden">
+              <span className="hidden md:inline">{item.name}</span>
+              <span className="md:hidden flex justify-center items-center w-6 h-6">
                 <Icon size={18} strokeWidth={2.5} />
               </span>
               {isActive && (
@@ -165,7 +102,7 @@ export function NavBar({ items, className }: NavBarProps) {
                     damping: 30,
                   }}
                 >
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary rounded-t-full">
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary rounded-t-full hidden md:block">
                     <div className="absolute w-12 h-6 bg-primary/20 rounded-full blur-md -top-2 -left-2" />
                     <div className="absolute w-8 h-6 bg-primary/20 rounded-full blur-md -top-1" />
                     <div className="absolute w-4 h-4 bg-primary/20 rounded-full blur-sm top-0 left-2" />
