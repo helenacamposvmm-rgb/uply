@@ -11,7 +11,7 @@ import { FloatingWhatsApp } from '@/components/landing/floating-whatsapp';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-black">
       <Header />
       <main>
         <Hero />
