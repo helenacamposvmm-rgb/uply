@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { Menu, X } from "lucide-react"
 import { Button } from "./button"
+import Image from "next/image"
 
 interface NavItem {
   name: string;
@@ -70,6 +71,15 @@ export function NavBar({ items, className }: NavBarProps) {
         </SheetTrigger>
         <SheetContent side="right" className="w-[280px] bg-card/95 backdrop-blur-lg">
           <nav className="flex flex-col gap-6 pt-16">
+            <Link href="#inicio" className="mb-4">
+              <Image 
+                src="https://i.postimg.cc/ZYvgQhgS/Logo-com-formas-quadradas-sobre-fundo-roxo.png"
+                alt="Uply Logo"
+                width={140}
+                height={32}
+                className='w-auto h-8'
+              />
+            </Link>
             {items.map((item) => (
                <SheetClose key={item.name} asChild>
                 <Link
@@ -101,7 +111,17 @@ export function NavBar({ items, className }: NavBarProps) {
         className,
       )}
     >
-      <div className="flex items-center gap-3 bg-card/70 border border-border/50 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+      <div className="flex items-center gap-3 bg-card/70 border border-border/50 backdrop-blur-lg py-1 px-2 rounded-full shadow-lg">
+        <Link href="#inicio" className="mr-2">
+            <Image 
+              src="https://i.postimg.cc/ZYvgQhgS/Logo-com-formas-quadradas-sobre-fundo-roxo.png"
+              alt="Uply Logo"
+              width={140}
+              height={32}
+              priority
+              className='w-auto h-8'
+            />
+          </Link>
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name

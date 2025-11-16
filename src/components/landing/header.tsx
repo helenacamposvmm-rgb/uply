@@ -31,23 +31,11 @@ export function Header() {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
+          'fixed top-0 left-0 right-0 z-40 transition-all duration-300 h-20',
            scrolled ? 'bg-background/80 backdrop-blur-sm' : 'bg-transparent'
         )}
       >
-        <div className="container mx-auto px-4 h-20 flex justify-between items-center">
-          <Link href="#inicio">
-            <Image 
-              src="https://i.postimg.cc/ZYvgQhgS/Logo-com-formas-quadradas-sobre-fundo-roxo.png"
-              alt="Uply Logo"
-              width={140}
-              height={32}
-              priority
-              className='w-auto h-8'
-            />
-          </Link>
-          {/* A navegação agora é controlada pelo componente NavBar que será renderizado abaixo */}
-        </div>
+        {/* O conteúdo do cabeçalho foi movido para o NavBar para centralizar o controle */}
       </header>
        <NavBar items={navItems} />
     </>
