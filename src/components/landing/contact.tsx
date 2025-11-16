@@ -20,7 +20,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contato" ref={ref} className="py-20 sm:py-32 bg-card/50">
+    <section id="contato" ref={ref} className="py-20 sm:py-32 bg-black">
       <div className={cn("container mx-auto px-4 opacity-0", isInView && "animate-fade-in-up")}>
         <SectionTitle
           title="Entre em Contato"

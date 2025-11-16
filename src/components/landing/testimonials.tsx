@@ -43,7 +43,7 @@ export function Testimonials() {
   const { ref, isInView } = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section id="depoimentos" ref={ref} className="py-20 sm:py-32 bg-card/50">
+    <section id="depoimentos" ref={ref} className="py-20 sm:py-32 bg-black">
       <div className={cn("container mx-auto px-4 opacity-0", isInView && "animate-fade-in-up")}>
         <SectionTitle
           title="O que dizem sobre mim"

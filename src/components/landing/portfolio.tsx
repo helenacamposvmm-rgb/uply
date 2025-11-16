@@ -48,7 +48,7 @@ export function Portfolio() {
   const { ref, isInView } = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section id="portfolio" ref={ref} className="py-20 sm:py-32 bg-card/50">
+    <section id="portfolio" ref={ref} className="py-20 sm:py-32 bg-black">
       <div className={cn("container mx-auto px-4 opacity-0", isInView && "animate-fade-in-up")}>
         <SectionTitle
           title="Meu Portfólio"
@@ -66,7 +66,7 @@ export function Portfolio() {
               {projects.map((project, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
-                    <Card className="overflow-hidden group transform transition-transform hover:-translate-y-2">
+                    <Card className="overflow-hidden group transform transition-transform hover:-translate-y-2 bg-card">
                       <CardContent className="p-0">
                         {project.image && (
                           <Image
