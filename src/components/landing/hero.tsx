@@ -34,12 +34,12 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/60 -z-10"></div>
       
       <div className={cn("container mx-auto px-4 opacity-0", isInView && "animate-fade-in-up")}>
-        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter">
-          <span className="block bg-clip-text text-transparent bg-gradient-to-r from-primary via-fuchsia-400 to-primary">BEATRIZ.</span>
-          <span className="block text-4xl sm:text-5xl md:text-6xl text-foreground">WEB DESIGNER</span>
+        <h1 className="text-6xl sm:text-7xl md:text-8xl font-black tracking-tighter">
+          <span className="block bg-clip-text text-transparent bg-gradient-to-r from-primary via-fuchsia-400 to-primary">Criação de Sites</span>
+          <span className="block text-4xl sm:text-5xl md:text-6xl text-foreground">e Landing Pages</span>
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-foreground/80">
-          Criando experiências digitais únicas e memoráveis que impulsionam o seu negócio.
+          Destaque-se no mundo digital com um site profissional para a sua empresa.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg">
