@@ -8,9 +8,9 @@
     },
     {
       "id": "about-me-picture",
-      "description": "Portrait of a web designer",
-      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29tYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjMyMTg5NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "woman portrait"
+      "description": "Logo com formas quadradas sobre fundo roxo",
+      "imageUrl": "https://i.postimg.cc/DzVS3GdZ/Logo-com-formas-quadradas-sobre-fundo-roxo-(1).png",
+      "imageHint": "logo"
     },
     {
       "id": "portfolio-1",

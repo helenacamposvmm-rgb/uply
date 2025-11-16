@@ -29,7 +29,7 @@ export function About() {
                 width={400}
                 height={400}
                 data-ai-hint={aboutImage.imageHint}
-                className="rounded-lg object-cover shadow-2xl"
+                className="rounded-lg object-contain shadow-2xl p-8"
               />
             )}
             <div className="absolute -top-4 -left-4 w-full h-full border-4 border-primary rounded-lg -z-10"></div>
