@@ -16,7 +16,7 @@ export function Cta() {
           title="Pronto para Começar?"
           subtitle="Vamos transformar sua ideia em um projeto digital de sucesso."
         />
-        <div className="mt-8">
+        <div className="mt-8 flex justify-center">
           <Link href="#contato">
             <ShimmerButton>Solicite um Orçamento</ShimmerButton>
           </Link>
