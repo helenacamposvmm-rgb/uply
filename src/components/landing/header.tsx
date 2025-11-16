@@ -27,16 +27,13 @@ export function Header() {
   ];
 
   return (
-    <>
-      <header
-        className={cn(
-          'fixed top-0 left-0 right-0 z-40 transition-all duration-300 h-20',
-           scrolled ? 'bg-background/80 backdrop-blur-sm' : 'bg-transparent'
-        )}
-      >
-        {/* O conteúdo do cabeçalho foi movido para o NavBar para centralizar o controle */}
-      </header>
-       <NavBar items={navItems} />
-    </>
+    <header
+      className={cn(
+        'fixed top-0 left-0 right-0 z-40 transition-all duration-300 md:h-20',
+        scrolled ? 'md:bg-background/80 md:backdrop-blur-sm' : 'md:bg-transparent'
+      )}
+    >
+      <NavBar items={navItems} />
+    </header>
   );
 }

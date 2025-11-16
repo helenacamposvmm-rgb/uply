@@ -63,12 +63,23 @@ export function NavBar({ items, className }: NavBarProps) {
   if (isMobile) {
     return (
        <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-        <SheetTrigger asChild>
-           <Button variant="outline" size="icon" className="fixed top-4 right-4 z-50 h-12 w-12 rounded-full md:hidden">
-            <Menu />
-            <span className="sr-only">Abrir menu</span>
-          </Button>
-        </SheetTrigger>
+        <div className="fixed top-0 left-0 right-0 z-50 p-4 flex justify-between items-center md:hidden bg-card/10 backdrop-blur-lg">
+          <Link href="#inicio">
+              <Image 
+                src="https://i.postimg.cc/0yKCCpyx/Logo-com-formas-quadradas-sobre-fundo-roxo-(1).png"
+                alt="Uply Logo"
+                width={120}
+                height={28}
+                className='w-auto h-7'
+              />
+          </Link>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full">
+              <Menu />
+              <span className="sr-only">Abrir menu</span>
+            </Button>
+          </SheetTrigger>
+        </div>
         <SheetContent side="right" className="w-[280px] bg-card/95 backdrop-blur-lg">
           <nav className="flex flex-col gap-6 pt-16">
             <Link href="#inicio" className="mb-4">
