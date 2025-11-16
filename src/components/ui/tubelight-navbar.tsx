@@ -5,6 +5,9 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
+import { Menu, X } from "lucide-react"
+import { Button } from "./button"
 
 interface NavItem {
   name: string;
@@ -16,12 +19,13 @@ interface NavItem {
 interface NavBarProps {
   items: NavItem[]
   className?: string
-  onLinkClick?: () => void;
 }
 
-export function NavBar({ items, className, onLinkClick }: NavBarProps) {
+export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -51,14 +55,53 @@ export function NavBar({ items, className, onLinkClick }: NavBarProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [items]);
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
+  if (isMobile) {
+    return (
+       <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+        <SheetTrigger asChild>
+           <Button variant="outline" size="icon" className="fixed top-4 right-4 z-50 h-12 w-12 rounded-full md:hidden">
+            <Menu />
+            <span className="sr-only">Abrir menu</span>
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="right" className="w-[280px] bg-card/95 backdrop-blur-lg">
+          <nav className="flex flex-col gap-6 pt-16">
+            {items.map((item) => (
+               <SheetClose key={item.name} asChild>
+                <Link
+                  href={item.url}
+                  onClick={() => {
+                    setActiveTab(item.name)
+                    handleLinkClick()
+                  }}
+                  className={cn(
+                    "flex items-center gap-3 text-lg font-medium",
+                    activeTab === item.name ? "text-primary" : "text-foreground/80"
+                  )}
+                >
+                  <item.icon className="h-5 w-5" />
+                  {item.name}
+                </Link>
+               </SheetClose>
+            ))}
+          </nav>
+        </SheetContent>
+      </Sheet>
+    )
+  }
+
   return (
     <div
       className={cn(
-        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:mt-6",
+        "fixed top-0 left-1/2 -translate-x-1/2 z-50 mt-6 hidden md:block",
         className,
       )}
     >
-      <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+      <div className="flex items-center gap-3 bg-card/70 border border-border/50 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
@@ -69,16 +112,15 @@ export function NavBar({ items, className, onLinkClick }: NavBarProps) {
               href={item.url}
               onClick={() => {
                 setActiveTab(item.name);
-                if (onLinkClick) onLinkClick();
               }}
               className={cn(
-                "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
+                "relative cursor-pointer text-sm font-semibold px-4 py-2 rounded-full transition-colors",
                 "text-foreground/80 hover:text-primary",
                 isActive && "text-primary",
               )}
             >
-              <span className="hidden md:inline">{item.name}</span>
-              <span className="md:hidden">
+              <span className="hidden lg:inline">{item.name}</span>
+              <span className="lg:hidden">
                 <Icon size={18} strokeWidth={2.5} />
               </span>
               {isActive && (
