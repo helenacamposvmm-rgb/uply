@@ -23,7 +23,6 @@ export function Header() {
     { name: 'Serviços', url: '#servicos', icon: Blocks, sheetClose: true },
     { name: 'Portfólio', url: '#portfolio', icon: Briefcase, sheetClose: true },
     { name: 'Sobre mim', url: '#sobre-mim', icon: User, sheetClose: true },
-    { name: 'Planos', url: '#planos', icon: FileText, sheetClose: true },
     { name: 'Contato', url: '#contato', icon: Phone, sheetClose: true },
   ];
 
