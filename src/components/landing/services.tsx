@@ -5,6 +5,7 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
 import { Globe, ShoppingCart, ShieldCheck } from 'lucide-react';
 import DisplayCards from '../ui/display-cards';
+import { LogoCloud } from '../ui/logo-cloud';
 
 const benefits = [
   {
@@ -39,8 +40,15 @@ const benefits = [
   },
 ];
 
+const serviceLogos = [
+    "Social Media",
+    "Criação de Site",
+    "Loja Virtual",
+    "Landing Page",
+];
+
 export function Services() {
-  const { ref, isInView } = useScrollAnimation({ threshold: 0.4, triggerOnce: true });
+  const { ref, isInView } = useScrollAnimation({ threshold: 0.2, triggerOnce: true });
 
   return (
     <section id="servicos" ref={ref} className="py-20 sm:py-32 overflow-hidden">
@@ -55,6 +63,9 @@ export function Services() {
             <div className="flex items-center justify-center min-h-[300px] md:order-1">
                 <DisplayCards cards={benefits} />
             </div>
+        </div>
+        <div className="mt-24">
+            <LogoCloud logos={serviceLogos} />
         </div>
       </div>
     </section>
