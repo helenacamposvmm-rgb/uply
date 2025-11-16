@@ -73,7 +73,7 @@ export function NavBar({ items, className }: NavBarProps) {
           <nav className="flex flex-col gap-6 pt-16">
             <Link href="#inicio" className="mb-4">
               <Image 
-                src="https://i.postimg.cc/ZYvgQhgS/Logo-com-formas-quadradas-sobre-fundo-roxo.png"
+                src="https://i.postimg.cc/0yKCCpyx/Logo-com-formas-quadradas-sobre-fundo-roxo-(1).png"
                 alt="Uply Logo"
                 width={140}
                 height={32}
@@ -114,7 +114,7 @@ export function NavBar({ items, className }: NavBarProps) {
       <div className="flex items-center gap-3 bg-card/70 border border-border/50 backdrop-blur-lg py-1 px-2 rounded-full shadow-lg">
         <Link href="#inicio" className="mr-2">
             <Image 
-              src="https://i.postimg.cc/ZYvgQhgS/Logo-com-formas-quadradas-sobre-fundo-roxo.png"
+              src="https://i.postimg.cc/0yKCCpyx/Logo-com-formas-quadradas-sobre-fundo-roxo-(1).png"
               alt="Uply Logo"
               width={140}
               height={32}

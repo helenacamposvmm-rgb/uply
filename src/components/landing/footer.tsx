@@ -16,7 +16,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <Link href="#inicio">
             <Image 
-              src="https://i.postimg.cc/ZYvgQhgS/Logo-com-formas-quadradas-sobre-fundo-roxo.png"
+              src="https://i.postimg.cc/0yKCCpyx/Logo-com-formas-quadradas-sobre-fundo-roxo-(1).png"
               alt="Uply Logo"
               width={140}
               height={32}
