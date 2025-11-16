@@ -27,7 +27,7 @@ export function Hero() {
           Destaque-se no mundo digital com um site profissional para a sua empresa.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-            <Link href="#contato">
+            <Link href="https://wa.me/message/XPYSZOMOVT3RM1" target="_blank">
                 <ShimmerButton>ENTRE EM CONTATO</ShimmerButton>
             </Link>
             <Link href="#portfolio">

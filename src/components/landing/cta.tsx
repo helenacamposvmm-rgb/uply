@@ -13,11 +13,11 @@ export function Cta() {
     <section ref={ref} className="py-20 sm:py-24 bg-black">
       <div className={cn("container mx-auto px-4 text-center opacity-0", isInView && "animate-fade-in-up")}>
         <SectionTitle
-          title="Pronto para Começar?"
+          title="Solicite um Orçamento"
           subtitle="Vamos transformar sua ideia em um projeto digital de sucesso."
         />
         <div className="mt-8 flex justify-center">
-          <Link href="#contato">
+          <Link href="https://wa.me/message/XPYSZOMOVT3RM1" target="_blank">
             <ShimmerButton>Solicite um Orçamento</ShimmerButton>
           </Link>
         </div>

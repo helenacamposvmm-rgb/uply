@@ -27,7 +27,7 @@ export function FloatingWhatsApp() {
       className="fixed bottom-6 right-6 h-16 w-16 rounded-full bg-green-500 hover:bg-green-600 shadow-lg z-50"
       aria-label="Contact on WhatsApp"
     >
-      <Link href="#">
+      <Link href="https://wa.me/message/XPYSZOMOVT3RM1" target="_blank">
         <WhatsAppIcon className="h-8 w-8 text-white" />
       </Link>
     </Button>
