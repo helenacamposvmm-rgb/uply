@@ -4,7 +4,7 @@ import { SectionTitle } from "./section-title";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
