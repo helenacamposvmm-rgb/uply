@@ -8,6 +8,7 @@ import { Mail, Phone, MapPin, Instagram, Linkedin, Dribbble } from "lucide-react
 import Link from "next/link"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { cn } from "@/lib/utils"
+import { ShimmerButton } from "../ui/shimmer-button";
 
 export function Contact() {
   const { ref, isInView } = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
@@ -57,9 +58,9 @@ export function Contact() {
             <Input type="text" placeholder="Seu nome" className="h-12 text-base"/>
             <Input type="email" placeholder="Seu email" className="h-12 text-base"/>
             <Textarea placeholder="Sua mensagem" rows={6} className="text-base" />
-            <Button type="submit" size="lg" className="w-full">
+            <ShimmerButton type="submit" className="w-full">
               Enviar Mensagem
-            </Button>
+            </ShimmerButton>
           </form>
         </div>
       </div>

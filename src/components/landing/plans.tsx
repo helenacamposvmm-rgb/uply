@@ -1,12 +1,12 @@
 "use client";
 
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check } from "lucide-react"
 import { SectionTitle } from "./section-title"
 import { cn } from "@/lib/utils"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import Link from "next/link"
+import { ShimmerButton } from "../ui/shimmer-button";
 
 const plans = [
   {
@@ -60,7 +60,7 @@ export function Plans() {
           subtitle="Escolha o plano que melhor se adapta às suas necessidades e vamos começar."
         />
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
+          {plans.map((plan) => (
             <Card
               key={plan.name}
               className={cn(
@@ -86,9 +86,9 @@ export function Plans() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button asChild className="w-full" variant={plan.highlight ? "default" : "outline"}>
-                   <Link href="#contato">Contratar</Link>
-                </Button>
+                 <Link href="#contato" className="w-full">
+                    <ShimmerButton className="w-full" background={plan.highlight ? 'hsl(var(--primary))' : 'hsl(var(--card))'}>Contratar</ShimmerButton>
+                </Link>
               </CardFooter>
             </Card>
           ))}

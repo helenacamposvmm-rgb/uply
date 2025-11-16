@@ -7,6 +7,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Dribbble, Instagram, Linkedin } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
+import { ShimmerButton } from '../ui/shimmer-button';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
 
@@ -41,13 +42,13 @@ export function Hero() {
         <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-foreground/80">
           Destaque-se no mundo digital com um site profissional para a sua empresa.
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg">
-            <Link href="#contato">ENTRE EM CONTATO</Link>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <Link href="#portfolio">MEU PORTFÓLIO</Link>
-          </Button>
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Link href="#contato">
+            <ShimmerButton>ENTRE EM CONTATO</ShimmerButton>
+          </Link>
+          <Link href="#portfolio">
+            <ShimmerButton background="hsl(var(--card))" className='text-primary-foreground'>MEU PORTFÓLIO</ShimmerButton>
+          </Link>
         </div>
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-6">
           {socialLinks.map((link, index) => (

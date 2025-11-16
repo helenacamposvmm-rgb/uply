@@ -1,12 +1,12 @@
 "use client";
 
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 import { SectionTitle } from './section-title';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { ShimmerButton } from '../ui/shimmer-button';
 
 const aboutImage = PlaceHolderImages.find(p => p.id === 'about-me-picture');
 
@@ -44,9 +44,11 @@ export function About() {
             <p>
               Meu objetivo é transformar suas ideias em realidade digital, combinando criatividade com as melhores práticas de usabilidade e tecnologia.
             </p>
-            <Button asChild size="lg" className="mt-6">
-              <Link href="#contato">Vamos conversar</Link>
-            </Button>
+            <div className="mt-6">
+              <Link href="#contato">
+                <ShimmerButton>Vamos conversar</ShimmerButton>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

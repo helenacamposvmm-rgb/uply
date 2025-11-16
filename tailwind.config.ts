@@ -80,11 +80,31 @@ export default {
                 transform: 'translateY(0)'
             },
         },
+        "shimmer-slide": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+        "spin-around": {
+          "0%": {
+            transform: "translate(0, 0) rotate(0)",
+          },
+          "15%, 35%": {
+            transform: "translate(0, 0) rotate(270deg)",
+          },
+          "65%, 85%": {
+            transform: "translate(0, 0) rotate(0)",
+          },
+          "100%": {
+            transform: "translate(0, 0) rotate(360deg)",
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+        "shimmer-slide": "shimmer-slide var(--speed) infinite",
+        "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
       },
     },
   },
