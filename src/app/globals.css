@@ -8,7 +8,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    background: radial-gradient(circle, hsl(var(--card)) 0%, hsl(var(--background)) 100%);
   }
 }
 
