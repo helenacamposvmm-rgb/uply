@@ -17,14 +17,14 @@ export function Footer() {
           <Link href="#inicio">
             <Image 
               src="https://i.postimg.cc/ZYvgQhgS/Logo-com-formas-quadradas-sobre-fundo-roxo.png"
-              alt="Beatriz Logo"
+              alt="Uply Logo"
               width={140}
               height={32}
               className='w-auto h-8'
             />
           </Link>
           <div className="text-center text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} Beatriz Web Designer. Todos os direitos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} Uply Web Designer. Todos os direitos reservados.</p>
           </div>
           <div className="flex space-x-2">
             {socialLinks.map((social, index) => (

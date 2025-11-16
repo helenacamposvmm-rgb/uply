@@ -39,7 +39,7 @@ export function Header() {
           <Link href="#inicio">
             <Image 
               src="https://i.postimg.cc/ZYvgQhgS/Logo-com-formas-quadradas-sobre-fundo-roxo.png"
-              alt="Beatriz Logo"
+              alt="Uply Logo"
               width={140}
               height={32}
               priority
