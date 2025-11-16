@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Menu, X } from 'lucide-react';
@@ -48,8 +49,15 @@ export function Header() {
       )}
     >
       <div className="container mx-auto px-4 h-20 flex justify-between items-center">
-        <Link href="#inicio" className="text-2xl font-black text-foreground hover:text-primary transition-colors">
-          BEATRIZ.
+        <Link href="#inicio">
+          <Image 
+            src="https://i.postimg.cc/ZYvgQhgS/Logo-com-formas-quadradas-sobre-fundo-roxo.png"
+            alt="Beatriz Logo"
+            width={140}
+            height={32}
+            priority
+            className='w-auto h-8'
+          />
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
           <NavLinks />
@@ -67,8 +75,14 @@ export function Header() {
             <SheetContent side="right" className="bg-background w-[250px] sm:w-[300px]">
               <div className="p-6 h-full flex flex-col">
                 <div className="flex justify-between items-center mb-8">
-                  <Link href="#inicio" className="text-2xl font-black text-foreground">
-                    BEATRIZ.
+                  <Link href="#inicio">
+                    <Image 
+                      src="https://i.postimg.cc/ZYvgQhgS/Logo-com-formas-quadradas-sobre-fundo-roxo.png"
+                      alt="Beatriz Logo"
+                      width={140}
+                      height={32}
+                      className='w-auto h-8'
+                    />
                   </Link>
                    <SheetClose asChild>
                       <Button variant="ghost" size="icon">

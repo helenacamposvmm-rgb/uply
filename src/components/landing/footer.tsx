@@ -1,5 +1,6 @@
 import { Dribbble, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "../ui/button";
 
 export function Footer() {
@@ -13,8 +14,14 @@ export function Footer() {
     <footer className="bg-card/50 border-t border-border">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <Link href="#inicio" className="text-2xl font-black text-foreground hover:text-primary transition-colors">
-            BEATRIZ.
+          <Link href="#inicio">
+            <Image 
+              src="https://i.postimg.cc/ZYvgQhgS/Logo-com-formas-quadradas-sobre-fundo-roxo.png"
+              alt="Beatriz Logo"
+              width={140}
+              height={32}
+              className='w-auto h-8'
+            />
           </Link>
           <div className="text-center text-muted-foreground">
             <p>&copy; {new Date().getFullYear()} Beatriz Web Designer. Todos os direitos reservados.</p>
